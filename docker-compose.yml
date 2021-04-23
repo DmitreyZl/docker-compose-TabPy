@@ -1,0 +1,11 @@
+version: '3'
+services:
+  tableau:
+    build: ./tableau
+    container_name: tableau
+    ports:
+      - "9821:9004"
+    volumes:
+      - ./tableau:/usr/src/app
+    command: "tabpy --config=file.conf"
+
